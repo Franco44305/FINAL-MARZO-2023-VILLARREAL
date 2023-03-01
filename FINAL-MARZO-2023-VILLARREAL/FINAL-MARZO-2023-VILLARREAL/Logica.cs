@@ -21,19 +21,33 @@ namespace FINAL_MARZO_2023_VILLARREAL
         }
 
         //Punto2
-        //public List<Herramienta> DevolverListadoHerramientas(int CodigoUsuario)
-        //{
-        //    foreach (var item in Usuarios) 
-        //    {
-        //        if (item.Codigo == CodigoUsuario)
-        //        {
+        public List<string> DevolverListadoHerramientas(int CodigoUsuario)
+        {
+            List<string> ListadoHerramientasDisponibles = new List<string>();
+            foreach (var user in Usuarios)
+            {
+                if (user.Codigo == CodigoUsuario)
+                {
+                    foreach (var item in Herramientas)
+                    {
+                        if (ValidarHerramientaUsuario(CodigoUsuario, item.Codigo) is true)
+                        {
+                            ListadoHerramientasDisponibles.Add($"{item.Codigo} + {item.Nombre} + {ValidarHerramientaUsuario(CodigoUsuario, item.Codigo)}");
+                        }
+                        else
+                        {
 
-        //        }
-        //    }
-        //}
+                            ListadoHerramientasDisponibles.Add($"{item.Codigo} + {item.Nombre} + {ValidarHerramientaUsuario(CodigoUsuario, item.Codigo)} + {"Si desea usar esta herramienta debe ser usuario VIP"}");
+                        }
+                    }
+                    return ListadoHerramientasDisponibles;
+                }
+            }
+            return ListadoHerramientasDisponibles;
+        }
 
         //Punto3
-        public bool CargarHerramientaEnProyecto(int CodigoHerramienta, int CodigoUsuario, int CodigoProyecto)
+        public (bool,string) CargarHerramientaEnProyecto(int CodigoHerramienta, int CodigoUsuario, int CodigoProyecto)
         {
             foreach (var item in Proyectos)
             {
@@ -42,19 +56,16 @@ namespace FINAL_MARZO_2023_VILLARREAL
                     if (ValidarHerramientaUsuario(CodigoUsuario, CodigoHerramienta) is true)
                     {
                         item.CodigosHerramientasUtilizadas.Add(CodigoHerramienta);
-                        return true;
+                        return (true, "Se agrego correctamente la herramienta al historial del proyecto.");
                     }
                 }
             }
-            return false;
+            return (false, "Herramienta no disponible para el usuario.");
         }
 
 
-        //Punto4
 
-
-
-
+        //ValidacionUsuarioHerramienta
         public bool ValidarHerramientaUsuario(int CodigoUsuario, int CodigoHerramienta)
         {
             foreach(var user in Usuarios)

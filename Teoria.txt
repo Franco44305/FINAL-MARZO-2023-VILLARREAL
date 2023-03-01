@@ -1,0 +1,47 @@
+1)
+	Polimorfismo por herencia:        
+      - Tratamos a un objeto de un tipo como si fuera de otro, es siempre de la subclase a su superclase, no entre subclases ni de la superclase a la subclase.
+        
+	Polimorfismo por abstracción:    
+      - Cuando tenemos una superclase abstracta y subclases de esta con métodos override, podemos tratar a todos los objetos como si fueran de la clase Padre,
+	pero al ejecutar sus métodos, serán los propios de las clases hijas.
+2) 
+	- Son expresiones anónimas que permiten buscar objetos o indices sin la necesidad de escribir muchas líneas, crear un nuevo método o hacer un bucle.
+	- Ejemplo:
+			List<int> Enteros = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+			decimal Promedio = Enteros.Average();
+3)
+	Cuando utlizamos un parámetro por valor lo que se hace es una copia del valor original y trabajamos con la misma, y pase lo que pase con el valor de esta copia el valor original
+	no se modificará. En cambio si utilizamos parámetros por referencia trabajamos con el valor original, entonces si este valor se modifica la variable original también.
+4)
+	-- Tipos de capas:
+	. Interfaz de usuario: capa que se encarga de la interacción con el usuario.
+	. Lógica de negocio: capa encargada de procesar los datos y aplicar las reglas de negocio del sistema, es la lógica del sistema.
+	. Acceso a datos: capa encargada de interactuar con la base de datos o almacenamiento de datos del sistema.
+	-- Los beneficios que podemos encontrar son:
+	. Modularidad: cada capa es independiente y se puede modificar sin afectar las demás capas.
+	. Escalabilidad: es más fácil escalar el sistema al separar la funcionalidad en capas.
+	. Reutilización: las capas se pueden reutilizar en otros sistemas similares.
+	. Mantenimiento: es más fácil de mantener el sistema al tener la funcionalidad separada en capas.
+5)
+	- Una sobreescritura es cuando utilizamos un método con la misma firma, parámetros y tipo de retorno.
+	- Es una nueva implementación del método en la subclase que reemplaza el método en la superclase.
+	--
+	- Una sobrecarga es cuando utilizamos un método con igual firma pero distintos parámetros ya que el compilador debe distinguir cual usar.
+	- El tipo de retorno es diferente en ambos métodos.
+	Ejemplo de sobrecarga:
+	public int Suma(int num1, int num2)
+	{
+		return (num1 + num2);
+	}
+	--
+	public decimal Suma(decimal num1, decimal num2)
+	{
+		return (num1 + num2);
+	}
+6)
+	- Identidad: cada objeto tiene una identidad única que lo distingue de otros objetos (nombre, tipo, propiedades).
+	- Comportamiento: los objetos pueden realizar acciones o comportamientos definidos por sus métodos. Estos pueden modificar el estado interno del mismo.
+	- Estado interno: es el estado actual del objeto, puede estar instanciado o no, ser nulo, tener un valor u otro.
+
+	
