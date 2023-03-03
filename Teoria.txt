@@ -9,12 +9,12 @@
 	- Son expresiones anónimas que permiten buscar objetos o indices sin la necesidad de escribir muchas líneas, crear un nuevo método o hacer un bucle.
 	- Ejemplo:
 			List<int> Enteros = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-			decimal Promedio = Enteros.Average();
+			decimal Promedio = Enteros.Average(); //CORRECCIÓN: ESTO NO ES UNA EXPRESIÓN LAMBDA.
 3)
 	Cuando utlizamos un parámetro por valor lo que se hace es una copia del valor original y trabajamos con la misma, y pase lo que pase con el valor de esta copia el valor original
 	no se modificará. En cambio si utilizamos parámetros por referencia trabajamos con el valor original, entonces si este valor se modifica la variable original también.
 4)
-	-- Tipos de capas:
+	-- Tipos de capas: //CORRECCIÓN: NO SON LAS UNICAS CAPAS.
 	. Interfaz de usuario: capa que se encarga de la interacción con el usuario.
 	. Lógica de negocio: capa encargada de procesar los datos y aplicar las reglas de negocio del sistema, es la lógica del sistema.
 	. Acceso a datos: capa encargada de interactuar con la base de datos o almacenamiento de datos del sistema.
@@ -25,10 +25,10 @@
 	. Mantenimiento: es más fácil de mantener el sistema al tener la funcionalidad separada en capas.
 5)
 	- Una sobreescritura es cuando utilizamos un método con la misma firma, parámetros y tipo de retorno.
-	- Es una nueva implementación del método en la subclase que reemplaza el método en la superclase.
+	- Es una nueva implementación del método en la subclase que reemplaza el método en la superclase. //CORRECCIÓN: NO REEMPLAZA, EN TIEMPO DE EJECUCIÓN SE EJECUTA EL MÉTODO PARTICULAR, PERO NO REEMPLAZA A OTRO.
 	--
 	- Una sobrecarga es cuando utilizamos un método con igual firma pero distintos parámetros ya que el compilador debe distinguir cual usar.
-	- El tipo de retorno es diferente en ambos métodos.
+	- El tipo de retorno es diferente en ambos métodos. //CORRECCIÓN: PUEDE NO SERLO.
 	Ejemplo de sobrecarga:
 	public int Suma(int num1, int num2)
 	{

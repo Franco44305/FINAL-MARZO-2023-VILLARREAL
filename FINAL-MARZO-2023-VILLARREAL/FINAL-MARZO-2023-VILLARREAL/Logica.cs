@@ -9,11 +9,13 @@ namespace FINAL_MARZO_2023_VILLARREAL
 {
     public class Logica
     {
+        //CORRECCIÓN: LOS USUARIOS TIENEN UNA LISTA DE PROYECTOS, NO HACE FALTA ESTA LISTA ACÁ, SE DEBE ASIGNAR AL USUARIO.
         List<Proyecto> Proyectos = new List<Proyecto>();
         List<Usuario> Usuarios = new List<Usuario>();
         List<Herramienta> Herramientas = new List<Herramienta>();
 
         //Punto 1
+        //CORRECCIÓN: LOS PROYECTOS SE ASIGNAN AL LISTADO QUE TIENE EL USUARIO.
         public bool CrearProyectos(int CodigoUsuario, string NombreProyecto, TipoPlantilla Tipo)
         {
             Proyecto proyecto = new Proyecto(CodigoUsuario, NombreProyecto, Tipo, null);//La lista es nula ya que a medida que se vaya utilizando herrammientas se van cargando
@@ -47,6 +49,7 @@ namespace FINAL_MARZO_2023_VILLARREAL
         }
 
         //Punto3
+        //CORRECCIÓN: HAY QUE ARMAR UNA CLASE CON DOS PROPIEDADES ACÁ, PRESTAR ATENCIÓN EN CLASES.
         public (bool,string) CargarHerramientaEnProyecto(int CodigoHerramienta, int CodigoUsuario, int CodigoProyecto)
         {
             foreach (var item in Proyectos)
@@ -63,7 +66,7 @@ namespace FINAL_MARZO_2023_VILLARREAL
             return (false, "Herramienta no disponible para el usuario.");
         }
 
-
+//CORRECCIÓN: NO ESTÁ EL PUNTO 4
 
         //ValidacionUsuarioHerramienta
         public bool ValidarHerramientaUsuario(int CodigoUsuario, int CodigoHerramienta)

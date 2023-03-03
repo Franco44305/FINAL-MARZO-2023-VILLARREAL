@@ -23,6 +23,7 @@ namespace FINAL_MARZO_2023_VILLARREAL.Models
 
         public override List<string> ObtenerDescripcion()
         {
+            //CORRECCIÓN: ACÁ Y EN LAS OTRAS SUBCLASES PODRIAS HABER LLAMADO DIRECTAMENTE AL METODO BASE Y A ESO SUMARLE LO PARTICULAR.
             List<string> list = new List<string>() { $"{Codigo} + {Nombre} + {Premiun} + {TamañosDisponibles} + {ColoresDisponibles}" };
             return list;
         }
